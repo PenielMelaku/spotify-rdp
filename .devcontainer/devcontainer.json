@@ -1,0 +1,16 @@
+{
+  "name": "Spotify RDP Proxy",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "forwardPorts": [3128, 8080, 8081, 8082],
+  "portsAttributes": {
+    "3128": {
+      "label": "Main Spotify Proxy",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh"
+}
